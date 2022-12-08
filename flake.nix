@@ -12,14 +12,24 @@
     let
       inherit (nixpkgs) lib;
       inherit (gitignore.lib) gitignoreSource;
+      gitignoreOverlay = self: super: {
+        lib = super.lib // {
+          cleanSource = gitignoreSource;
+        };
+      };
     in
       flake-utils.lib.eachDefaultSystem (system:
         let
           pkgs = import nixpkgs {
             inherit system;
+            overlays = [ gitignoreOverlay ];
           };
           problems = {
             day4 = pkgs.callPackage ./day4 { };
+            day5 = pkgs.callPackage ./rust-app.nix {
+              name = "day5";
+              src = ./day5;
+            };
           };
         in
           {

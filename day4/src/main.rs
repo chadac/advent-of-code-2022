@@ -77,6 +77,7 @@ fn part2(input: &Vec<Pair>) {
 }
 
 fn main() {
+    println!("################ Day 4 ################");
     let input: Vec<Pair> = read_input();
     part1(&input);
     part2(&input);
