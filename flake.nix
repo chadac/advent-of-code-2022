@@ -30,6 +30,10 @@
               name = "day5";
               src = ./day5;
             };
+            day8 = pkgs.callPackage ./rust-app.nix {
+              name = "day8";
+              src = ./day8;
+            };
           };
         in
           {
