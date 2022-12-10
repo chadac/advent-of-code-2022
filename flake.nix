@@ -29,6 +29,7 @@
             day5 = pkgs.callPackage ./rust-app.nix { name = "day5"; };
             day8 = pkgs.callPackage ./rust-app.nix { name = "day8"; };
             day9 = pkgs.callPackage ./rust-app.nix { name = "day9"; };
+            day10 = pkgs.callPackage ./rust-app.nix { name = "day10"; };
           };
         in
           {
