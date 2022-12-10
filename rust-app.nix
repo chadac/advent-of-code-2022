@@ -1,9 +1,9 @@
-{ name, src, rustPlatform, lib }:
+{ name, rustPlatform, lib }:
 
 rustPlatform.buildRustPackage {
   name = name;
 
-  src = lib.cleanSource src;
+  src = lib.cleanSource (./. + "/${name}");
 
-  cargoLock.lockFile = "${src}/Cargo.lock";
+  cargoLock.lockFile = ./. + "/${name}/Cargo.lock";
 }

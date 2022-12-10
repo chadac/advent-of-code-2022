@@ -25,15 +25,10 @@
             overlays = [ gitignoreOverlay ];
           };
           problems = {
-            day4 = pkgs.callPackage ./day4 { };
-            day5 = pkgs.callPackage ./rust-app.nix {
-              name = "day5";
-              src = ./day5;
-            };
-            day8 = pkgs.callPackage ./rust-app.nix {
-              name = "day8";
-              src = ./day8;
-            };
+            day4 = pkgs.callPackage ./rust-app.nix { name = "day4"; };
+            day5 = pkgs.callPackage ./rust-app.nix { name = "day5"; };
+            day8 = pkgs.callPackage ./rust-app.nix { name = "day8"; };
+            day9 = pkgs.callPackage ./rust-app.nix { name = "day9"; };
           };
         in
           {
